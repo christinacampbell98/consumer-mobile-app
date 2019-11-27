@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar text-center >
+    <ion-button (click)=back() expand="full" color= "tertiary" >Back to Listings</ion-button>
+    <ion-tab-button (click)=saved(property)>
+      <ion-icon name="heart"></ion-icon>
+      <ion-label>Save</ion-label>
+    </ion-tab-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content text-center>
+    <h1>  {{property.title}}</h1><br>
+    <img class= "image" src = "{{property.imgURL}}"  />
+    <h3>Location: {{property.location}}</h3>
+    <h3>${{property.pricePerNight}} per night</h3><br>
+    <hr>
+    <h5>Description: {{property.description}}</h5>
+    <h2>Want to book?</h2><br>
+    <ion-item>
+        <ion-label>Start Date(YYYY MM DD)</ion-label>
+        <ion-datetime displayFormat="YYYY MM DD" placeholder="Select Start Date" [(ngModel)]="start"></ion-datetime>
+      </ion-item>
+      <ion-item>
+          <ion-label>End Date(YYYY MM DD)</ion-label>
+          <ion-datetime displayFormat="YYYY MM DD" placeholder="Select End Date" [(ngModel)]="end"></ion-datetime>
+      </ion-item>
+      <ion-button (click)=createBooking() expand= 'full' color= "tertiary" >Request to Book</ion-button>
+
+</ion-content>
